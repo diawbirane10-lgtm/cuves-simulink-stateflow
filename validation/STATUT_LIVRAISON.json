@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-29",
+  "MATLAB_installed_in_preparation_environment": true,
+  "MATLAB_version": "R2024a",
+  "SLX_already_generated": true,
+  "native_validation_executed": true,
+  "native_validation_scenarios_passed": 7,
+  "hmi_creation_and_export_verified": true,
+  "hmi_live_dcy1_test_passed": true,
+  "python_reference_scenarios_passed": 5,
+  "delivered_hmi": "native MATLAB source connected to Simulink RuntimeObject",
+  "communication": "functional cyclic DP emulation only; no hardware driver or FDL stack",
+  "stateflow_charts": [
+    "Sequence",
+    "DP_Control"
+  ],
+  "stateflow_dp_states_verified": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "hmi_live_transfer_and_bus_fault_passed": true,
+  "presentation_pdf_pages": 5,
+  "presentation_video": "results/rejeu_perte_liaison.mp4 (rejeu accelere des traces Simulink)",
+  "stateflow_hierarchy": [
+    "CYCLE_CPU",
+    "SERVICE_DP"
+  ]
+}

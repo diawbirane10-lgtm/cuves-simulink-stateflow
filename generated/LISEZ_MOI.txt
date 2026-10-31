@@ -1,0 +1,2 @@
+Le fichier Cuves_PROFIBUS_Stateflow.slx a ete construit et compile sous MATLAB R2024a.
+Lancer demarrer_projet depuis le dossier racine pour le regenerer depuis les sources.

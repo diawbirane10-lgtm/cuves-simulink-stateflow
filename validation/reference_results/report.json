@@ -1,0 +1,67 @@
+{
+  "engine": "Python reference only; NOT MATLAB/Simulink execution",
+  "scenarios": [
+    {
+      "scenario": "normal",
+      "passed": true,
+      "durations_s": {
+        "1": 10.0,
+        "2": 5.0,
+        "3": 15.0
+      },
+      "final_A_L": 1.994761581843965,
+      "final_B_L": 33.00523841815629,
+      "cycles_DP": 3247
+    },
+    {
+      "scenario": "remote_start",
+      "passed": true,
+      "durations_s": {
+        "1": 10.0,
+        "2": 5.0,
+        "3": 15.0
+      },
+      "final_A_L": 1.994761581843965,
+      "final_B_L": 33.00523841815629,
+      "cycles_DP": 3247
+    },
+    {
+      "scenario": "high_B",
+      "passed": true,
+      "durations_s": {
+        "1": 10.0,
+        "2": 5.0,
+        "3": 15.0
+      },
+      "final_A_L": 1.9918356157948065,
+      "final_B_L": 43.008164384207376,
+      "cycles_DP": 4247
+    },
+    {
+      "scenario": "link_loss",
+      "passed": true,
+      "durations_s": {
+        "1": 10.0,
+        "2": 5.0,
+        "3": 15.0
+      },
+      "final_A_L": 0,
+      "final_B_L": 0,
+      "cycles_DP": 1232
+    },
+    {
+      "scenario": "stuck_valve",
+      "passed": true,
+      "durations_s": {
+        "1": 10.0,
+        "2": 5.0,
+        "3": 15.0
+      },
+      "final_A_L": 35.00000000000023,
+      "final_B_L": 0,
+      "cycles_DP": 3247
+    }
+  ],
+  "payload_combinations": 8,
+  "matlab_executed": false
+}

@@ -1,0 +1,30 @@
+name: Compiler le rapport LaTeX
+
+on:
+  push:
+    paths:
+      - "docs/rapport_court_latex/**"
+      - ".github/workflows/rapport-latex.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Installer LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-recommended texlive-lang-french texlive-fonts-recommended lmodern
+      - name: Compiler le rapport
+        working-directory: docs/rapport_court_latex
+        run: |
+          pdflatex -halt-on-error -interaction=nonstopmode main.tex
+          pdflatex -halt-on-error -interaction=nonstopmode main.tex
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rapport-court-pdf
+          path: docs/rapport_court_latex/main.pdf

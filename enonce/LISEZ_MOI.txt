@@ -1,0 +1,14 @@
+ENONCE ORIGINAL - EXERCICE DES DEUX CUVES
+
+Les six photos fournies dans la conversation sont incluses sans modification.
+Elles sont classees selon l'ordre des pages de l'exercice.
+
+Page 1 : fonctionnement, schema des cuves et reseau PROFIBUS-DP.
+Page 2 : modules, tableaux d'E/S et questions 1 et 2.
+Page 3 : question 3, GRAFCET.
+Page 4 : question 4, architecture reseau.
+Page 5 : question 5, mise en oeuvre de la communication.
+Page 6 : question 6, programme de l'application.
+
+Les sources MATLAB, l'IHM, les essais et les documents du projet V1 sont conserves.
+Lire README.md pour le lancement et les limites de validation.

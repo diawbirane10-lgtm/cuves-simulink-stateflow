@@ -1,0 +1,14 @@
+# Fichiers de travail regeneres par MATLAB et Simulink
+slprj/
+*.slxc
+*.asv
+*.m~
+results/session_interactive.log
+
+# Fichiers temporaires de compilation LaTeX
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
