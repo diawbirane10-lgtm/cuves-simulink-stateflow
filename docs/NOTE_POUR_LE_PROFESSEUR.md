@@ -22,7 +22,7 @@ Il s'agit d'une **émulation fonctionnelle du service cyclique PROFIBUS-DP**, et
 
 ## Validation
 
-Le modèle a été généré et compilé sous MATLAB R2024a sur le poste de l'étudiant. Le script `validate_cuves` a exécuté sept essais sur le modèle Simulink : fonctionnement nominal, départ distant, cuve B pleine, perte de liaison pendant le transfert ou le remplissage, vanne bloquée et reset pendant le remplissage. Les sept assertions ont réussi ; les traces CSV/MAT et le rapport JSON sont dans `results/`. L'IHM a été vérifiée en cours de simulation : le bouton DCY1 active le remplissage après mise en ligne du bus DP. Les résultats Python restent une référence indépendante complémentaire.
+Le modèle a été généré et compilé sous MATLAB R2024a sur le poste de l'étudiant. Le script `validate_cuves` a exécuté huit essais sur le modèle Simulink : fonctionnement nominal, bouton maintenu, départ distant, cuve B pleine, perte de liaison pendant le transfert ou le remplissage, vanne bloquée et reset pendant le remplissage. Les huit essais ont réussi ; les traces CSV/MAT et le rapport JSON sont dans `results/`. L'IHM a été vérifiée en cours de simulation : le bouton DCY1 active le remplissage après mise en ligne du bus DP. Les résultats Python restent une référence indépendante complémentaire.
 
 ## Documents remis
 
@@ -39,7 +39,7 @@ Je vous transmets une reprise de l'exercice des deux cuves sous MATLAB/Simulink 
 
 La partie PROFIBUS-DP est représentée par une émulation fonctionnelle des échanges cycliques et des diagnostics. Elle ne remplace pas une interface PROFIBUS matérielle.
 
-Le dossier contient le modèle `.slx`, l'IHM et les traces des sept essais MATLAB réussis. Je souhaite vous présenter le modèle et discuter de son prolongement éventuel sur matériel Siemens.
+Le dossier contient le modèle `.slx`, l'IHM et les traces des huit essais MATLAB réussis. Je souhaite vous présenter le modèle et discuter de son prolongement éventuel sur matériel Siemens.
 
 Bien cordialement,  
 Birane Diaw  

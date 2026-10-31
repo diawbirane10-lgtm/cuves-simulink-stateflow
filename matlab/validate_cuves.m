@@ -4,7 +4,7 @@ root=fileparts(fileparts(mfilename('fullpath'))); model=build_cuves();
 rt=sfroot;
 assert(~isempty(rt.find('-isa','Stateflow.Chart','Path',[model '/Sequence'])));
 assert(~isempty(rt.find('-isa','Stateflow.Chart','Path',[model '/DP_Control'])));
-scenarios={'normal','remote_start','high_B','link_loss','stuck_valve',...
+scenarios={'normal','held_start','remote_start','high_B','link_loss','stuck_valve',...
  'link_loss_fill','reset_during_fill'};
 report=struct('scenario',{},'passed',{},'message',{});
 for n=1:numel(scenarios)
@@ -27,6 +27,16 @@ for n=1:numel(scenarios)
   assert(all(ismember(b(:,10),0:4)),'Etat DP invalide');
   if strcmp(name,'normal')
    assert(all(ismember(0:3,unique(b(:,10)))),'Initialisation Stateflow DP incomplete');
+   % Les actions du GRAFCET doivent etre exclusives aux etapes 1, 2 et 3.
+   for k=1:3
+    active=ph==k;
+    other=setdiff(1:3,k);
+    assert(all(c(active,k)>0.5) && all(all(c(active,other)<0.5)),...
+     'Commande VA-01, VA-02 ou AGT incoherente avec son etape');
+   end
+   assert(all(all(c(ph>=1 & ph<=3,4:5)<0.5)),...
+    'Pompe ou VA-03 active avant le transfert');
+   assert(all(c(ph==4,5)>0.5),'VA-03 non commandee au transfert');
   end
   if ~any(strcmp(name,{'link_loss_fill','reset_during_fill'}))
    for pair=[1 10;2 5;3 15]'
@@ -34,11 +44,14 @@ for n=1:numel(scenarios)
     assert(abs(duration-pair(2))<=.03,'Duree de phase incorrecte');
    end
   end
-  if any(strcmp(name,{'normal','remote_start','high_B'}))
+  if any(strcmp(name,{'normal','held_start','remote_start','high_B'}))
    assert(any(pump),'La pompe ne demarre pas');
    assert(ph(end)==0 && p(end,1)<=2.05,'Cycle non termine');
   end
-  if strcmp(name,'high_B')
+  if strcmp(name,'held_start')
+   assert(sum(diff([0;double(ph==1)])==1)==1,...
+    'Un bouton maintenu a relance le cycle');
+  elseif strcmp(name,'high_B')
    mask=t>36 & t<54; assert(any(ph(mask)==4 & c(mask,4)==0 & b(mask,4)>.5));
    assert(any(t>55 & pump),'Pas de reprise apres vidange de B');
   elseif strcmp(name,'link_loss')

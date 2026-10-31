@@ -4,7 +4,7 @@
   "MATLAB_version": "R2024a",
   "SLX_already_generated": true,
   "native_validation_executed": true,
-  "native_validation_scenarios_passed": 7,
+  "native_validation_scenarios_passed": 8,
   "hmi_creation_and_export_verified": true,
   "hmi_live_dcy1_test_passed": true,
   "python_reference_scenarios_passed": 5,

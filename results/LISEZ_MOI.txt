@@ -1,4 +1,4 @@
-Ce dossier contient les traces CSV et MAT de cinq simulations du modele Simulink sous MATLAB R2024a.
-validation_matlab.json confirme les cinq essais reussis.
+Ce dossier contient les traces CSV et MAT de huit simulations du modele Simulink sous MATLAB R2024a.
+validation_matlab.json confirme les huit essais reussis, dont held_start (bouton maintenu).
 ihm_apercu.png montre l'interface au repos ; ihm_en_marche.png montre le remplissage lance par DCY1.
 Les resultats Python restent dans validation/reference_results/.

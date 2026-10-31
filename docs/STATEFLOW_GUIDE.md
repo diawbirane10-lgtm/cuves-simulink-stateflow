@@ -40,7 +40,7 @@ L'ET200M est une station d'E/S déportées, pas une seconde CPU programmable. Ce
 
 Le bouton **Stateflow** de l'IHM ouvre les deux charts. **Capture** enregistre la supervision dans `results/`. Les étapes temporisées affichent le temps restant estimé.
 
-Pour reproduire les sept essais enregistrés, exécuter `addpath('matlab'); validate_cuves` depuis le dossier du projet. Les deux derniers essais déclenchent une perte de liaison et un reset pendant le remplissage. Les colonnes `phase`, `etatDP`, `busOK`, `tx0` et `rx0` sont dans les CSV de `results/`.
+Pour reproduire les huit essais enregistrés, exécuter `addpath('matlab'); validate_cuves` depuis le dossier du projet. `held_start` vérifie qu'un bouton maintenu ne relance pas le cycle ; les deux derniers essais déclenchent une perte de liaison et un reset pendant le remplissage. Les colonnes `phase`, `etatDP`, `busOK`, `tx0` et `rx0` sont dans les CSV de `results/`.
 
 `generer_presentation` produit des images des deux charts, une synthèse des traces et un rejeu MP4 accéléré de la perte de liaison. Ce rejeu utilise les valeurs simulées et ne prétend pas être une capture de l'IHM.
 

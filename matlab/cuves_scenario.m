@@ -5,6 +5,9 @@ initialB=0; stopTime=65;
 switch char(name)
  case 'normal'
   t=[0;1;1.3;65]; v=zeros(4,6); v(2,1)=1;
+ case 'held_start'
+  % Appui conserve apres la fin du cycle : aucun redemarrage sans front neuf.
+  t=[0;1;65]; v=zeros(3,6); v(2:3,1)=1;
  case 'remote_start'
   t=[0;1;1.3;65]; v=zeros(4,6); v(2,2)=1;
  case 'high_B'

@@ -3,6 +3,14 @@
 Projet pédagogique de Birane Diaw, 4GESI-G1, EMSI Rabat.
 Reprise de l'exercice de B. Najimi : CPU 1516-3 PN/DP et ET200M séparés de 150 m.
 
+## Le TD en bref
+
+Le chart Stateflow `Sequence` suit le GRAFCET de l'exercice :
+
+`ATTENTE → VA-01 (10 s) → VA-02 (5 s) → AGT (15 s) → TRANSFERT → ATTENTE`
+
+Un nouvel appui sur DCY1 ou DCY2 lance le cycle si la cuve A est au niveau bas. Au transfert, VA-03 s'ouvre ; la pompe fonctionne seulement si VA-03 est confirmée ouverte, si B n'est pas au niveau haut et si A n'est pas au niveau bas. Le niveau bas de A termine le cycle. L'autre chart, `DP_Control`, illustre uniquement la disponibilité des E/S déportées ; l'ET200M n'exécute pas de programme.
+
 ## Démarrer dans MATLAB
 
 Produits requis : MATLAB, Simulink et Stateflow. Projet généré et validé avec MATLAB R2024a sur le poste de l'étudiant. Aucun Simscape, Industrial Communication Toolbox ou Simulink Real-Time n'est nécessaire pour l'émulation.
@@ -27,9 +35,9 @@ addpath('matlab')
 rapport = validate_cuves;
 ```
 
-Sept simulations et leurs assertions ont été exécutées avec succès sur le modèle Simulink sous MATLAB R2024a, directement depuis ce dossier. Les résultats CSV, MAT et JSON sont sauvegardés dans `results/`. Les deux essais supplémentaires couvrent une coupure du bus et une réinitialisation pendant le remplissage. L'IHM a été vérifiée en direct : DCY1 lance le remplissage, puis les captures `results/ihm_transfert.png` et `results/ihm_defaut_bus.png` montrent le transfert et la réaction à une coupure. Relancer la commande ci-dessus pour reproduire les essais.
+Huit simulations et leurs assertions ont été exécutées avec succès sur le modèle Simulink sous MATLAB R2024a, directement depuis ce dossier. Les résultats CSV, MAT et JSON sont sauvegardés dans `results/`. L'essai `held_start` vérifie qu'un bouton maintenu ne relance pas le cycle. L'IHM a été vérifiée en direct : DCY1 lance le remplissage, puis les captures `results/ihm_transfert.png` et `results/ihm_defaut_bus.png` montrent le transfert et la réaction à une coupure. Relancer la commande ci-dessus pour reproduire les essais.
 
-**Statut du projet** : le modèle `.slx` a été généré, compilé et simulé sous MATLAB R2024a ; les sept scénarios passent. Les résultats Python indépendants sont conservés comme référence complémentaire.
+**Statut du projet** : le modèle `.slx` a été généré, compilé et simulé sous MATLAB R2024a ; les huit scénarios passent. Les résultats Python indépendants sont conservés comme référence complémentaire.
 
 ## Ce que le projet représente
 
@@ -63,7 +71,7 @@ Pour un PROFIBUS matériel, il faut une interface maître/esclave et des pilotes
 - `docs/` : note pour le professeur, guide des deux charts Stateflow, architecture, cartographie, sources et limites.
 - `validation/reference_model.py` : modèle indépendant sans dépendance Python externe.
 - `validation/reference_results/` : traces et vérifications Python, identifiées comme telles.
-- `results/` : résultats des sept scénarios, captures des charts, courbes, aperçu de l'IHM et rejeu MP4.
+- `results/` : résultats des huit scénarios, captures des charts, courbes, aperçu de l'IHM et rejeu MP4.
 - `generated/` : modèle `.slx` réellement produit par MATLAB R2024a.
 
 ## Démonstration conseillée, environ 5 minutes
