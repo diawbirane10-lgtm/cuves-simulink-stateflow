@@ -26,16 +26,17 @@ Le modèle Simulink contient deux automates Stateflow. \texttt{Sequence} command
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.84\linewidth]{images/chart_sequence.png}
+\includegraphics[width=0.94\linewidth]{images/chart_sequence.png}
 \caption{Automate de la séquence dans Stateflow (capture du modèle).}
 \end{figure}
 
+\clearpage
 \section*{Essais et résultats}
 Sept scénarios ont été exécutés sous MATLAB R2024a ; les assertions sont toutes satisfaites. Ils couvrent le cycle normal, le démarrage déporté, la cuve B pleine, une perte de liaison, une vanne bloquée, une coupure pendant le remplissage et une remise à zéro pendant le remplissage. Lors d'une coupure du bus, l'échange cesse, les sorties passent à l'état sûr et le défaut apparaît dans l'IHM.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.88\linewidth]{images/ihm_defaut_bus.png}
+\includegraphics[width=0.96\linewidth]{images/ihm_defaut_bus.png}
 \caption{IHM pendant l'essai de perte de liaison (capture de la simulation).}
 \end{figure}
 
