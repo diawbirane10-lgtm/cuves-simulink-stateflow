@@ -59,7 +59,7 @@ Pour un PROFIBUS matériel, il faut une interface maître/esclave et des pilotes
 - `matlab/validate_cuves.m` : essais MATLAB/Simulink à exécuter localement.
 - `matlab/generer_presentation.m` : export du schéma, des charts, des courbes et d'un rejeu vidéo accéléré.
 - `matlab/capturer_demo_ihm.m` : démarre l'IHM, teste le transfert et la coupure du bus, puis enregistre deux captures réelles.
-- `docs/rapport_court_latex/` : rapport court en LaTeX et PDF, texte noir et blanc, captures en couleurs, sans pied de page.
+- `docs/rapport_court_latex/` : rapport court `rapport_court_deux_cuves.pdf` et source `main.tex`, texte noir et blanc, captures en couleurs, sans pied de page.
 - `docs/` : note pour le professeur, guide des deux charts Stateflow, architecture, cartographie, sources et limites.
 - `validation/reference_model.py` : modèle indépendant sans dépendance Python externe.
 - `validation/reference_results/` : traces et vérifications Python, identifiées comme telles.

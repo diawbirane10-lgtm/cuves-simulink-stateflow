@@ -22,10 +22,14 @@
     4
   ],
   "hmi_live_transfer_and_bus_fault_passed": true,
-  "presentation_pdf_pages": 5,
+  "presentation_pdf_pages": 2,
   "presentation_video": "results/rejeu_perte_liaison.mp4 (rejeu accelere des traces Simulink)",
   "stateflow_hierarchy": [
     "CYCLE_CPU",
     "SERVICE_DP"
-  ]
+  ],
+  "presentation_pdf": "docs/rapport_court_latex/rapport_court_deux_cuves.pdf",
+  "presentation_pdf_source": "docs/rapport_court_latex/main.tex",
+  "github_repo": "https://github.com/diawbirane10-lgtm/cuves-simulink-stateflow",
+  "matlab_mcp_server": "MathWorks MATLAB MCP Server v0.16.0, installed and protocol-verified on workstation"
 }
